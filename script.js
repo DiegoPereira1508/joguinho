@@ -74,7 +74,7 @@ function updateScore() {
 }
 
 function saveHighScore() {
-    const highScore = localStorage.getItem('highScore') || 0;
+    const highScore = parseInt(localStorage.getItem('highScore')) || 0;
     if (score > highScore) {
         localStorage.setItem('highScore', score);
         document.getElementById('highScore').textContent = `Recorde: ${score}`;
@@ -114,6 +114,10 @@ function playSound(soundId) {
     const sound = document.getElementById(soundId);
     sound.currentTime = 0;
     sound.play();
+}
+
+function toggleTheme() {
+    document.body.classList.toggle('light-theme');
 }
 
 // Inicializa o jogo
