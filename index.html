@@ -8,14 +8,21 @@
 </head>
 <body>
     <div id="game">
-        <h1>Jogo da Adivinhação</h1>
+        <h1>🎮 Jogo da Adivinhação 🎮</h1>
+        <p id="story">Você está preso em uma ilha deserta. Adivinhe o número para escapar!</p>
         <p>Adivinhe um número entre 1 e 100:</p>
         <input type="number" id="guess" min="1" max="100" required>
         <button onclick="checkGuess()">Enviar</button>
         <button onclick="resetGame()">Reiniciar Jogo</button>
         <p id="message"></p>
-        <p id="attempts"></p>
+        <p id="hint"></p>
+        <p id="attempts">Tentativas: 0/10</p>
+        <p id="score">Pontuação: 0</p>
+        <p id="highScore">Recorde: 0</p>
+        <p id="stats">Jogos: 0 | Vitórias: 0 | Taxa de acerto: 0%</p>
     </div>
+    <audio id="correctSound" src="correct.mp3"></audio>
+    <audio id="wrongSound" src="wrong.mp3"></audio>
     <script src="script.js"></script>
 </body>
 </html>
