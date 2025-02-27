@@ -3,12 +3,15 @@ let attempts = 0;
 const maxAttempts = 10;
 
 function checkGuess() {
-    const guess = parseInt(document.getElementById('guess').value);
+    const guessInput = document.getElementById('guess');
+    const guess = parseInt(guessInput.value);
     const message = document.getElementById('message');
     const attemptsDisplay = document.getElementById('attempts');
 
+    // Validação do valor inserido
     if (isNaN(guess) || guess < 1 || guess > 100) {
         message.textContent = 'Por favor, insira um número válido entre 1 e 100.';
+        message.style.color = 'red';
         return;
     }
 
